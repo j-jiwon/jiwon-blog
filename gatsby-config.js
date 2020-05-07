@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: `Jiwon Blog`,
+    title: `Jiwon.io`,
     author: {
-      name: `Jung Jiwon`,
-      summary: `who lives and works in Republic of Korea building Interesting things.`,
+      name: `@Jiwon`,
+      summary: `일상의 모든 것들을 재미있게 만들고 싶은 개발자`,
     },
     description: `A starter blog demonstrating what Gatsby can do.`,
     siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
@@ -60,7 +60,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
+        name: `Jiwon Blog`,
         short_name: `GatsbyJS`,
         start_url: `/`,
         background_color: `#ffffff`,

@@ -8,7 +8,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
-
+import { Link } from "gatsby"
 import { rhythm } from "../utils/typography"
 
 const Bio = () => {
@@ -16,7 +16,7 @@ const Bio = () => {
     query BioQuery {
       avatar: file(absolutePath: { regex: "/avatar.jpg/" }) {
         childImageSharp {
-          fixed(width: 50, height: 50) {
+          fixed(width: 100, height: 100) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -40,7 +40,8 @@ const Bio = () => {
     <div
       style={{
         display: `flex`,
-        marginBottom: rhythm(2.5),
+        marginTop: rhythm(5),
+        marginBottom: rhythm(5),
       }}
     >
       <Image
@@ -56,11 +57,35 @@ const Bio = () => {
           borderRadius: `50%`,
         }}
       />
-      <p>
-        Written by <strong>{author.name}</strong> {author.summary}
-        {` `}
-        <a href={`https://github.com/${social.github}`}>Github</a>
-      </p>
+      <section
+        style={{
+          fontFamily: "Noto Sans, sans-serif",
+          fontWeight: 500,
+          fontSize: 15,
+        }}
+      >
+        <span style={{ fontWeight: 500, fontSize: 20 }}>Written by </span>
+        <span
+          style={{
+            color: "#ffffff",
+            fontWeight: 600,
+            fontSize: 23,
+            fontFamily: "Noto Sans, sans-serif",
+            backgroundColor: "#e74c3c",
+          }}
+        >
+          {author.name}
+        </span>
+        <br />
+        <span style={{ fontSize: 12 }}>{author.summary}</span>
+        <br />
+        <Link
+          style={{ boxShadow: `none`, color: `#e74c3c`, fontWeight: 600 }}
+          to={`https://github.com/${social.github}`}
+        >
+          Github
+        </Link>
+      </section>
     </div>
   )
 }

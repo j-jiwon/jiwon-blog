@@ -23,6 +23,8 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             style={{
               marginTop: rhythm(1),
               marginBottom: 0,
+              fontFamily: "Noto Sans KR, Noto Serif",
+              fontWeight: 500,
             }}
           >
             {post.frontmatter.title}
@@ -37,11 +39,9 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             {post.frontmatter.date}
           </p>
         </header>
-        <section dangerouslySetInnerHTML={{ __html: post.html }} />
-        <hr
-          style={{
-            marginBottom: rhythm(1),
-          }}
+        <section
+          dangerouslySetInnerHTML={{ __html: post.html }}
+          style={{ borderBottom: "1px solid black" }}
         />
         <footer>
           <Bio />
@@ -60,14 +60,22 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         >
           <li>
             {previous && (
-              <Link to={previous.fields.slug} rel="prev">
+              <Link
+                to={previous.fields.slug}
+                rel="prev"
+                style={{ boxShadow: `none`, color: `#e74c3c` }}
+              >
                 ← {previous.frontmatter.title}
               </Link>
             )}
           </li>
           <li>
             {next && (
-              <Link to={next.fields.slug} rel="next">
+              <Link
+                to={next.fields.slug}
+                rel="next"
+                style={{ boxShadow: `none`, color: `#e74c3c` }}
+              >
                 {next.frontmatter.title} →
               </Link>
             )}
