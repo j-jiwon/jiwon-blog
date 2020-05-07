@@ -17,7 +17,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
       />
-      <article>
+      <article style={{ fontFamily: "Noto Sans KR, Noto Serif" }}>
         <header>
           <h1
             style={{

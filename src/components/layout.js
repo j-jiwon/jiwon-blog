@@ -1,13 +1,14 @@
 import React from "react"
 import { Link } from "gatsby"
-
 import { rhythm } from "../utils/typography"
 
+import bgImage from "../../content/assets/bg_design.png"
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
   const borderStyle = {
     borderTop: "1px solid black",
   }
+
   let header
 
   if (location.pathname === rootPath) {
@@ -16,8 +17,8 @@ const Layout = ({ location, title, children }) => {
         style={{
           marginTop: 0,
           marginBottom: 5,
-          fontFamily: `Noto Sans KR`,
-          fontWeight: 400,
+          fontFamily: `Noto Sans KR, sans-serif`,
+          fontWeight: 600,
           borderBottom: "1px solid black",
         }}
       >
@@ -37,7 +38,7 @@ const Layout = ({ location, title, children }) => {
       <h1
         style={{
           fontFamily: `Noto Sans KR, sans-serif`,
-          fontWeight: 400,
+          fontWeight: 600,
           marginTop: 0,
           marginBottom: 5,
           borderBottom: "1px solid black",
@@ -65,6 +66,8 @@ const Layout = ({ location, title, children }) => {
         padding: `${rhythm(1.5)} ${rhythm(2 / 4)}`,
         fontFamily: `Noto Sans KR, sans-serif`,
         fontWeight: 500,
+        backgroundImage:
+          location.pathname === rootPath ? `url(${bgImage})` : ``,
       }}
     >
       <header style={{ marginBottom: 100 }}>{header}</header>

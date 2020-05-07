@@ -14,6 +14,7 @@ const BlogIndex = ({ data, location }) => {
     marginTop: 100,
     marginBottom: 80,
   }
+
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
