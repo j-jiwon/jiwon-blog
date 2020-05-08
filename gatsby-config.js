@@ -6,7 +6,7 @@ module.exports = {
       summary: `일상의 모든 것들을 재미있게 만들고 싶은 개발자`,
     },
     description: `Written by @nemoj Web FE Engineer interested in Interactive Web`,
-    siteUrl: `https://nemoj.netlify.app/`,
+    siteUrl: `https://nemoj.netlify.app`,
     social: {
       github: `j-jiwon`,
     },
@@ -60,13 +60,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Jiwon Blog`,
-        short_name: `GatsbyJS`,
+        name: `Nemo.J`,
+        short_name: `Nemo.J`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `./content/assets/j_logo.png`,
+        icon: `content/assets/j_logo.png`,
       },
     },
     `gatsby-plugin-react-helmet`,
