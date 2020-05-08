@@ -1,12 +1,12 @@
 module.exports = {
   siteMetadata: {
-    title: `Jiwon.io`,
+    title: `Nemo.J`,
     author: {
-      name: `@Jiwon`,
+      name: `@nemoj`,
       summary: `일상의 모든 것들을 재미있게 만들고 싶은 개발자`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    description: `Written by @nemoj Web FE Engineer interested in Interactive Web`,
+    siteUrl: `https://nemoj.netlify.app/`,
     social: {
       github: `j-jiwon`,
     },

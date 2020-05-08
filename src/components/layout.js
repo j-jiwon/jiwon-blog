@@ -75,12 +75,12 @@ const Layout = ({ location, title, children }) => {
       <footer style={borderStyle}>
         ©Jiwon {new Date().getFullYear()}, Built with
         {` `}
-        <Link
+        <a
           style={{ boxShadow: `none`, color: `#e74c3c` }}
-          to="https://www.gatsbyjs.org"
+          href="https://www.gatsbyjs.org"
         >
           Gatsby
-        </Link>
+        </a>
       </footer>
     </div>
   )
