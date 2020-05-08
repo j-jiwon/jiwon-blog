@@ -8,7 +8,6 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
-import { Link } from "gatsby"
 import { rhythm } from "../utils/typography"
 
 const Bio = () => {
@@ -79,12 +78,12 @@ const Bio = () => {
         <br />
         <span style={{ fontSize: 12 }}>{author.summary}</span>
         <br />
-        <Link
+        <a
           style={{ boxShadow: `none`, color: `#e74c3c`, fontWeight: 600 }}
-          to={`https://github.com/${social.github}`}
+          href={`https://github.com/${social.github}`}
         >
           Github
-        </Link>
+        </a>
       </section>
     </div>
   )

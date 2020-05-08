@@ -39,7 +39,7 @@
   "devDependencies": {
     "prettier": "2.0.5"
   },
-  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
+  "homepage": "https://github.com/j-jiwon/jiwon-blog#readme",
   "keywords": [
     "gatsby"
   ],
@@ -47,7 +47,7 @@
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
+    "url": "git+https://github.com/j-jiwon/jiwon-blog.git"
   },
   "scripts": {
     "build": "gatsby build",
