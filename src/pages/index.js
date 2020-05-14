@@ -4,53 +4,59 @@ import { Link, graphql } from "gatsby"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { rhythm } from "../utils/typography"
+import GlobalStyles from "../styles/GlobalStyles"
+import Theme from "../Styles/Theme"
+import { ThemeProvider } from "styled-components"
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
   const posts = data.allMarkdownRemark.edges
-  const articleStyle = {
-    borderTop: "1px solid black",
-    marginTop: 100,
-    marginBottom: 80,
-  }
 
   return (
-    <Layout location={location} title={siteTitle}>
-      <SEO title="All posts" />
-      <Bio />
-      {posts.map(({ node }) => {
-        const title = node.frontmatter.title || node.fields.slug
-        return (
-          <article key={node.fields.slug} style={articleStyle}>
-            <header>
-              <h2
-                style={{
-                  marginBottom: rhythm(1 / 4),
-                  fontFamily: `Open Sans, sans-serif`,
-                  fontWeight: 400,
-                }}
-              >
-                <Link
-                  style={{ boxShadow: `none`, color: "#000000" }}
-                  to={node.fields.slug}
+    <ThemeProvider theme={Theme}>
+      <Layout location={location} title={siteTitle}>
+        <GlobalStyles />
+        <SEO title="All posts" />
+        <Bio />
+        {posts.map(({ node }) => {
+          const title = node.frontmatter.title || node.fields.slug
+          return (
+            <article
+              key={node.fields.slug}
+              style={{
+                borderTop: "1px solid black",
+                paddingTop: 50,
+                marginBottom: 50,
+              }}
+            >
+              <header>
+                <h3
+                  style={{
+                    marginBottom: 25,
+                  }}
                 >
-                  {title}
-                </Link>
-              </h2>
-              <small>{node.frontmatter.date}</small>
-            </header>
-            <section>
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: node.frontmatter.description || node.excerpt,
-                }}
-              />
-            </section>
-          </article>
-        )
-      })}
-    </Layout>
+                  <Link
+                    style={{ boxShadow: `none`, color: "#000000" }}
+                    to={node.fields.slug}
+                  >
+                    {title}
+                  </Link>
+                </h3>
+                <small>{node.frontmatter.date}</small>
+              </header>
+              <section style={{ marginTop: 5 }}>
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: node.frontmatter.description || node.excerpt,
+                  }}
+                  style={{ lineHeight: 1.3 }}
+                />
+              </section>
+            </article>
+          )
+        })}
+      </Layout>
+    </ThemeProvider>
   )
 }
 

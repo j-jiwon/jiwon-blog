@@ -1,10 +1,8 @@
 ---
-title: "[C++]전역변수 자동 초기화 이유"
+title: "[C++] 전역변수 자동 초기화 이유"
 date: "2020-05-14T01:36:32.169Z"
 description: "C++에서 전역변수가 자동 초기화 되는 이유"
 ---
-
-## 전역변수 자동 초기화 이유
 
 **질문: <https://www.acmicpc.net/board/view/50025#comment-88070**>
 

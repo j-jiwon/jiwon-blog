@@ -1,17 +1,18 @@
 import Typography from "typography"
-import Wordpress2016 from "typography-theme-wordpress-2016"
 
-Wordpress2016.overrideThemeStyles = () => {
-  return {
-    "a.gatsby-resp-image-link": {
-      boxShadow: `none`,
+const typography = new Typography({
+  baseFontSize: "14px",
+  baseLineHeight: 1.6666,
+  googleFonts: [
+    { name: "Noto Sans KR", styles: ["400"] },
+    {
+      name: "Noto Serif KR",
+      styles: ["400"],
     },
-  }
-}
-
-delete Wordpress2016.googleFonts
-
-const typography = new Typography(Wordpress2016)
+  ],
+  headerFontFamily: ["Noto Sans KR", "Noto Serif KR", "serif", "sans-serif"],
+  bodyFontFamily: ["Noto Sans KR", "sans-serif"],
+})
 
 // Hot reload typography in development.
 if (process.env.NODE_ENV !== `production`) {

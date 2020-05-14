@@ -5,6 +5,8 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
+import GlobalStyles from "../styles/GlobalStyles"
+import Theme from "../Styles/Theme"
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
@@ -13,17 +15,17 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
+      <GlobalStyles />
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
       />
-      <article style={{ fontFamily: "Noto Sans KR, Noto Serif" }}>
+      <article>
         <header>
           <h1
             style={{
-              marginTop: rhythm(1),
-              marginBottom: 0,
-              fontFamily: "Noto Sans KR, Noto Serif",
+              marginTop: 0,
+              marginBottom: 5,
               fontWeight: 500,
             }}
           >
@@ -41,7 +43,9 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         </header>
         <section
           dangerouslySetInnerHTML={{ __html: post.html }}
-          style={{ borderBottom: "1px solid black" }}
+          style={{
+            borderBottom: "1px solid black",
+          }}
         />
         <footer>
           <Bio />
