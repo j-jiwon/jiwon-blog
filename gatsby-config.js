@@ -1,6 +1,16 @@
 module.exports = {
   siteMetadata: {
     title: `Nemo.J`,
+    menuLinks: [
+      {
+        name: "home",
+        link: "/",
+      },
+      {
+        name: "page2",
+        link: "/page-2",
+      },
+    ],
     author: {
       name: `@nemoj`,
       summary: `일상의 모든 것들을 재미있게 만들고 싶은 개발자`,

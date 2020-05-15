@@ -6,7 +6,6 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
 import GlobalStyles from "../styles/GlobalStyles"
-import Theme from "../Styles/Theme"
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
@@ -26,7 +25,6 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             style={{
               marginTop: 0,
               marginBottom: 5,
-              fontWeight: 500,
             }}
           >
             {post.frontmatter.title}
@@ -35,7 +33,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             style={{
               ...scale(-1 / 5),
               display: `block`,
-              marginBottom: rhythm(1),
+              marginBottom: rhythm(2),
             }}
           >
             {post.frontmatter.date}

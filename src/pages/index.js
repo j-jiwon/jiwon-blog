@@ -18,43 +18,50 @@ const BlogIndex = ({ data, location }) => {
         <GlobalStyles />
         <SEO title="All posts" />
         <Bio />
-        {posts.map(({ node }) => {
-          const title = node.frontmatter.title || node.fields.slug
-          return (
-            <article
-              key={node.fields.slug}
-              style={{
-                borderTop: "1px solid black",
-                paddingTop: 50,
-                marginBottom: 50,
-              }}
-            >
-              <header>
-                <h3
-                  style={{
-                    marginBottom: 25,
-                  }}
-                >
-                  <Link
-                    style={{ boxShadow: `none`, color: "#000000" }}
-                    to={node.fields.slug}
-                  >
-                    {title}
-                  </Link>
-                </h3>
-                <small>{node.frontmatter.date}</small>
-              </header>
-              <section style={{ marginTop: 5 }}>
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html: node.frontmatter.description || node.excerpt,
-                  }}
-                  style={{ lineHeight: 1.3 }}
-                />
-              </section>
-            </article>
-          )
-        })}
+        <h3>Posts</h3>
+        <div
+          style={{
+            borderTop: "1px solid black",
+            borderLeft: "1px solid black",
+            borderRight: "1px solid black",
+            marginBottom: 20,
+          }}
+        >
+          {posts.map(({ node }) => {
+            const title = node.frontmatter.title || node.fields.slug
+            return (
+              <article
+                key={node.fields.slug}
+                style={{
+                  borderBottom: "1px solid black",
+                  padding: 10,
+                  paddingLeft: 20,
+                  height: "200px",
+                }}
+              >
+                <header>
+                  <h3>
+                    <Link
+                      style={{ boxShadow: `none`, color: "#000000" }}
+                      to={node.fields.slug}
+                    >
+                      {title}
+                    </Link>
+                  </h3>
+                  <small>{node.frontmatter.date}</small>
+                </header>
+                <section style={{ marginTop: 5 }}>
+                  <p
+                    dangerouslySetInnerHTML={{
+                      __html: node.frontmatter.description || node.excerpt,
+                    }}
+                    style={{ lineHeight: 1.3 }}
+                  />
+                </section>
+              </article>
+            )
+          })}
+        </div>
       </Layout>
     </ThemeProvider>
   )
@@ -67,6 +74,10 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        menuLinks {
+          name
+          link
+        }
       }
     }
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
