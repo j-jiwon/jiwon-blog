@@ -6,24 +6,26 @@ import Theme from "../styles/Theme"
 
 const Layout = ({ location, title, children }) => {
   let header = (
-    <h1
-      style={{
-        marginTop: 0,
-        marginBottom: 5,
-        color: "#000000",
-        borderBottom: "1px solid black",
-      }}
-    >
-      <Link
+    <div>
+      <h1
         style={{
-          boxShadow: `none`,
-          color: `inherit`,
+          marginTop: 0,
+          marginBottom: 5,
+          color: "#000000",
+          borderBottom: "1px solid black",
         }}
-        to={`/`}
       >
-        {title}
-      </Link>
-    </h1>
+        <Link
+          style={{
+            boxShadow: `none`,
+            color: `inherit`,
+          }}
+          to={`/`}
+        >
+          {title}
+        </Link>
+      </h1>
+    </div>
   )
 
   return (

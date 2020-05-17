@@ -4,6 +4,7 @@ import { Link, graphql } from "gatsby"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Category from "../components/category"
 import GlobalStyles from "../styles/GlobalStyles"
 import Theme from "../Styles/Theme"
 import { ThemeProvider } from "styled-components"
@@ -18,7 +19,7 @@ const BlogIndex = ({ data, location }) => {
         <GlobalStyles />
         <SEO title="All posts" />
         <Bio />
-        <h3>Posts</h3>
+        <Category />
         <div
           style={{
             borderTop: "1px solid black",
@@ -36,18 +37,18 @@ const BlogIndex = ({ data, location }) => {
                   borderBottom: "1px solid black",
                   padding: 10,
                   paddingLeft: 20,
-                  height: "200px",
+                  height: "180px",
                 }}
               >
                 <header>
-                  <h3>
+                  <h4>
                     <Link
                       style={{ boxShadow: `none`, color: "#000000" }}
                       to={node.fields.slug}
                     >
                       {title}
                     </Link>
-                  </h3>
+                  </h4>
                   <small>{node.frontmatter.date}</small>
                 </header>
                 <section style={{ marginTop: 5 }}>

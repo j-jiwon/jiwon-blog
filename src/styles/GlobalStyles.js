@@ -8,7 +8,7 @@ export default createGlobalStyle`
         box-sizing: border-box;
     }
     body{
-        font-size:14px;
+        font-size:13px;
         margin: 4px;
         line-height: 1.5;
        
