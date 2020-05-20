@@ -6,7 +6,7 @@ const Category = () => {
     <div className="category">
       <ul className="tabList">
         <li className="tab">
-          <a href="">All</a>
+          <a href="/">All</a>
         </li>
         <li className="tab">
           <a href="">React</a>
